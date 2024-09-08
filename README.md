@@ -1,4 +1,6 @@
 ﻿# Bedrock
+![alt text](https://github.com/CakeNuthep/bedrock/blob/main/image/Eample.png)
+
 ## Require
 Python 3.12.4
 
