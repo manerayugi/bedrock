@@ -1,5 +1,5 @@
 ﻿# Bedrock
-![alt text](https://github.com/CakeNuthep/bedrock/blob/main/image/Eample.png)
+![alt text](https://github.com/CakeNuthep/bedrock/blob/main/image/Example.png)
 
 ## Require
 Python 3.12.4
