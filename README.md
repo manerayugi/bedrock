@@ -14,7 +14,7 @@ AWS_DEFAULT_REGION=us-east-1
 
 ## Installing Requirements
 ```sh
-pip install -r image/requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Running Locally
