@@ -15,7 +15,16 @@ def demo_chatbot():
     top_p = 0.9
     demo_llm=ChatBedrock(
         credentials_profile_name="default",
-        model_id="meta.llama3-8b-instruct-v1:0",
+        # model_id="meta.llama3-3-70b-instruct-v1:0",
+        # model_id="meta.llama3-2-90b-instruct-v1:0",
+        # model_id="meta.llama3-1-70b-instruct-v1:0",
+        model_id="meta.llama3-70b-instruct-v1:0",
+        # model_id="meta.llama3-8b-instruct-v1:0",
+        
+        # model_id="meta.llama3-1-70b-instruct-v1:0",
+        # model_id="meta.llama3-1-70b-instruct-v1:0",
+        # model_id="meta.llama3-8b-instruct-v1:0",
+        # model_id="meta.llama3-2-90b-instruct-v1:0",
         model_kwargs={
             "max_gen_len": max_gen_len,
             "temperature": temperature,
