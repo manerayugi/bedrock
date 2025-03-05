@@ -11,24 +11,28 @@ from langchain_aws import ChatBedrock
 
 def demo_chatbot():
     max_gen_len = 128
-    temperature = 0.1
-    top_p = 0.9
+    max_tokens = 1000
+    temperature = 1
+    top_p = 0.999
     demo_llm=ChatBedrock(
-        credentials_profile_name="default",
+        # credentials_profile_name="default",
+        # us.anthropic.claude-3-7-sonnet-20250219-v1:0
         # model_id="meta.llama3-3-70b-instruct-v1:0",
         # model_id="meta.llama3-2-90b-instruct-v1:0",
         # model_id="meta.llama3-1-70b-instruct-v1:0",
-        model_id="meta.llama3-70b-instruct-v1:0",
+        # model_id="meta.llama3-70b-instruct-v1:0",
         # model_id="meta.llama3-8b-instruct-v1:0",
         
-        # model_id="meta.llama3-1-70b-instruct-v1:0",
-        # model_id="meta.llama3-1-70b-instruct-v1:0",
+        model_id="anthropic.claude-3-5-sonnet-20240620-v1:0",
+        # model_id="anthropic.claude-3-7-sonnet-20250219-v1:0",
         # model_id="meta.llama3-8b-instruct-v1:0",
         # model_id="meta.llama3-2-90b-instruct-v1:0",
         model_kwargs={
-            "max_gen_len": max_gen_len,
-            "temperature": temperature,
-            "top_p": top_p
+            # "max_gen_len": max_gen_len,
+            "max_tokens": max_tokens,
+            # "temperature": temperature,
+            # "top_p": top_p,
+            "anthropic_version": "bedrock-2023-05-31",
         }
     )
     return demo_llm
@@ -39,7 +43,7 @@ def demo_memory(session_id):
     llm_data=demo_chatbot()
     memory=ConversationBufferMemory(
         llm=llm_data, 
-        max_token_limit=128,
+        max_token_limit=20000,
         chat_memory=store[session_id],
         k=3,
         return_messages=True
